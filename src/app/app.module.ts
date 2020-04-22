@@ -9,7 +9,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { HomeComponent } from './home/home.component';
 import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.component';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule, FormsModule} from '@angular/forms'
+import { ClientesService } from './services/clientes.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +24,13 @@ import { ReactiveFormsModule} from '@angular/forms'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     
   ],
-  providers: [],
+  providers: [
+    ClientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
