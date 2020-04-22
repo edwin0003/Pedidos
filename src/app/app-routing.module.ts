@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { HomeComponent } from './home/home.component';
+import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientesComponent
+    component: HomeComponent
   },
   {
     path: 'productos',
@@ -17,7 +19,16 @@ const routes: Routes = [
   {
     path: 'pedidos',
     component: PedidosComponent
+  },
+  {
+    path: 'agregar-cliente',
+    component: AgregarClientesComponent
+  },
+  {
+    path: 'cliente',
+    component: ClientesComponent
   }
+
 ];
 
 @NgModule({
