@@ -1,1 +1,32 @@
-<p>pedidos works!</p>
+<div class="container">
+    <div class="cliente">
+        <h2>Cliente: {{this.pedidoServicio.pedido.nombreCliente}} </h2>
+        <h5>Total: {{this.pedidoServicio.pedido.total |currency: "BOB: "}} </h5>
+    </div>
+
+    <div class="detalle">
+        <table class="table table-bordered  table-dark">
+            <thead>
+              <tr class="color">
+                <th scope="col" >ProductoId</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let producto of this.pedidoServicio.pedido.pedidoDetalle">
+                
+                <td> {{producto.productoId}}</td>
+                <td> {{producto.nombreProducto}} </td>
+                <td> {{producto.cantidad}} </td>
+                <td> {{producto.precio |currency:"BOB: "}} </td>
+                <td> {{producto.total |currency: "BOB: "}} </td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+    </div>
+</div>
