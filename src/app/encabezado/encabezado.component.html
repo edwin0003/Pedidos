@@ -10,10 +10,14 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/productos']" routerLinkActive="router-link-active"  >Productos</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/listado-pedidos']" routerLinkActive="router-link-active"  >Lista de Pedidos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pedidos']" routerLinkActive="router-link-active"  >Pedidos</a>
+        <a class="nav-link" [routerLink]="['/pedidos']" routerLinkActive="router-link-active"  >Pedido Actual</a>
       </li>
+     
       <li class="navbar-text">
         {{this.pedidosServicio.pedido.nombreCliente}}
       </li>

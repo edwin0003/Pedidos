@@ -48,7 +48,7 @@ export class Pedidos {
     }
     this.actualizarTotal();
   }
-  private actualizarTotal(){
+  public actualizarTotal(){
       this.total=0;
       for (const producto of this.pedidoDetalle) {
           this.total= this.total + producto.total;

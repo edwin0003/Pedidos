@@ -6,6 +6,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { HomeComponent } from './home/home.component';
 import { AgregarClientesComponent } from './agregar-clientes/agregar-clientes.component';
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
+import { ListadoPedidosComponent } from './listado-pedidos/listado-pedidos.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'cliente',
     component: ClientesComponent
+  },
+  {
+    path:'listado-pedidos',
+    component: ListadoPedidosComponent
   }
 
 

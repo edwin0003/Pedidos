@@ -29,6 +29,7 @@ export class PedidosService {
   guardarPedido(){
     let listadoPedidos: Pedidos[]=new Array<Pedidos>();
     listadoPedidos= this.listadoPedidosLocalStorage;
+    this.pedido.pedidoId= listadoPedidos.length +1;
     listadoPedidos.push(this.pedido);
     localStorage.setItem("pedidos", JSON.stringify(listadoPedidos));
     localStorage.removeItem("ultimoPedido");
@@ -41,6 +42,6 @@ export class PedidosService {
     if (pedidos == null) {
       return new Array<Pedidos>();
     }
-    return pedidos;
+    return pedidos.sort((a,b)=>b.pedidoId - a.pedidoId)
   }
 }
