@@ -37,4 +37,13 @@ export class PedidosComponent implements OnInit {
     // );
     // console.log(pedido);
   }
+  calcularTotal(position: number){
+
+    this.pedidoServicio.pedido.actualizarCantidad(position);
+    this.pedidoServicio.guardarLocalStorage();
+
+  }
+  guardar(){
+    this.pedidoServicio.guardarPedido();
+  }
 }

@@ -9,7 +9,16 @@ export class Pedidos {
   total: number;
   pedidoDetalle: Array<PedidoDetalle>;
 
-  constructor() {
+  constructor(datos? :Pedidos) {
+
+    if (datos != null) {
+      this.pedidoId = datos.pedidoId;
+      this.clienteId= datos.clienteId
+      this.nombreCliente= datos.nombreCliente
+      this.total= datos.total
+      this.pedidoDetalle= datos.pedidoDetalle
+      return;
+    }
     this.pedidoId = this.pedidoId;
     this.clienteId = this.clienteId;
     this.nombreCliente = this.nombreCliente;
@@ -24,7 +33,7 @@ export class Pedidos {
     pedidosDetalle.precio = producto.precio;
     pedidosDetalle.productoId = producto.productoId;
     pedidosDetalle.total = pedidosDetalle.cantidad * pedidosDetalle.precio;
-    debugger;
+
     let existe: number = this.pedidoDetalle.filter(
       (x) => x.productoId == producto.productoId
     ).length;
@@ -45,4 +54,9 @@ export class Pedidos {
           this.total= this.total + producto.total;
       }
   }
+  public actualizarCantidad(position: number){
+    this.pedidoDetalle[position].total= this.pedidoDetalle[position].cantidad * this.pedidoDetalle[position].precio;
+    this.actualizarTotal();
+  }
+
 }

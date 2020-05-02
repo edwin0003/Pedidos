@@ -16,17 +16,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let producto of this.pedidoServicio.pedido.pedidoDetalle">
+              <tr *ngFor="let producto of this.pedidoServicio.pedido.pedidoDetalle; let position= index">
                 
                 <td> {{producto.productoId}}</td>
                 <td> {{producto.nombreProducto}} </td>
-                <td> {{producto.cantidad}} </td>
+                <td> <input (input)="calcularTotal(position)" [(ngModel)]="producto.cantidad" > </td>
                 <td> {{producto.precio |currency:"BOB: "}} </td>
                 <td> {{producto.total |currency: "BOB: "}} </td>
               </tr>
               
             </tbody>
           </table>
-
+        <button class="btn btn-primary" (click)="guardar()" >Guardar</button>
     </div>
 </div>
