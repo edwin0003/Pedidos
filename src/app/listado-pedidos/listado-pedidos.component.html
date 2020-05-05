@@ -1,14 +1,20 @@
-<div class="container" >
-    <div class="row mt-4">
-        <div class="col-sm-3 mt-3" *ngFor="let pedidos of listadoPedidos">
-          <div class="card clientes">
-            <div class="card-body">
-              <h5 class="card-title">Cliente: {{pedidos.nombreCliente}} </h5>
-              <h6 class="card-subtitle">Total a Pagar {{pedidos.total | currency:"BOB: "}} </h6>
-              <p class="card-text">Total Productos: {{pedidos.pedidoDetalle.length}} </p>
-              
-            </div>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-sm-3 mt-3" *ngFor="let pedidos of listadoPedidos; ">
+      <div class="card clientes">
+        <div class="card-body">
+          <h5 class="card-title">Cliente: {{pedidos.nombreCliente}} </h5>
+          <h6 class="card-subtitle">Total a Pagar {{pedidos.total | currency:"BOB: "}} </h6>
+          <p>Nombre de producto:</p>
+          <div *ngFor="let detalle of pedidos.pedidoDetalle">          
+              <p class="card-text"> {{detalle.nombreProducto}}  {{detalle.cantidad}} {{productos}} {{detalle}}  </p>
+              <div *ngFor="let productos of detalle.Productos" > 
+                <p> {{productos.descripcion}} </p>
+              </div>
           </div>
+
         </div>
       </div>
+    </div>
+  </div>
 </div>
